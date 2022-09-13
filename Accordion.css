@@ -1,0 +1,56 @@
+*{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+h1{
+    margin-top: 0;
+    font-size: 75px;
+    color: rgb(100, 40, 220);
+    text-align: center;
+    border-bottom: 1px solid rgb(11, 11, 49);
+}
+.contaioner{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.accordion{
+    width: 50%;
+    background: linear-gradient(180deg, #DB302A 0%, #621868 100%);
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    padding: 10px 10px;
+}
+.accordionLabel{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 8px;
+    color: white;
+    cursor: pointer;
+    font-size: 25px;
+}
+.accordionLabel::after{
+    content: '>';
+    transition: transform 0.5s ease-in-out;
+    color: white;
+}
+.accordionLabel:hover{
+    background-color: rgba(255, 255, 255, 0.3);
+}
+.inputHidden{
+    display: none;
+}
+.content{
+    display: none;
+    line-height: 1.6;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.3);
+    padding: 10px 10px;
+    cursor: default;
+}
+.inputHidden:checked ~ .content{
+    display: block;
+}
+.inputHidden:checked ~ .accordionLabel::after{
+    transform: rotate(90deg);
+}
